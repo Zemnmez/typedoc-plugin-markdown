@@ -31,14 +31,14 @@ export function signatureTitle(this: SignatureReflection, showSymbol: boolean) {
           if (param.flags.isOptional) {
             paramsmd.push('?');
           }
-          paramsmd.push(`: *${type.call(param.type)}*`);
+          paramsmd.push(`: **${type.call(param.type)}**`);
           return paramsmd.join('');
         })
         .join(', ')
     : '';
   md.push(`(${params})`);
   if (this.type) {
-    md.push(` → ${type.call(this.type)}`);
+    md.push(` → **${type.call(this.type)}**`);
   }
   return md.join('') + '\n';
 }
